@@ -1,0 +1,317 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+    <!-- First CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:id="@+id/Card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+
+            <ImageView
+                android:id="@+id/groupImage1"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/firebase_logo" />
+
+            <TextView
+                android:id="@+id/groupTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/groupImage1"
+                android:text="Group 1"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/groupDescription1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/groupTitle1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/groupImage1"
+                android:text="Group About Something"
+                android:textColor="@color/colorPrimary" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/Card2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/groupImage2"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/firebase_logo" />
+
+        <TextView
+            android:id="@+id/groupTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/groupImage2"
+            android:text="New group name sdsf"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/groupDescription2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupTitle2"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/groupImage2"
+            android:text="This is the description of the new group im creating"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/joinButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupDescription2"
+            android:layout_alignParentEnd="true"
+            android:text="Join"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/ic_like_black"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/Card3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/groupImage3"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/firebase_logo" />
+
+        <TextView
+            android:id="@+id/groupTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/groupImage3"
+            android:text="New group name sdsf"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/groupDescription3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupTitle3"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/groupImage3"
+            android:text="This is the description of the new group im creating"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/joinButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupDescription3"
+            android:layout_alignParentEnd="true"
+            android:text="Join"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/ic_like_black"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/Card4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/groupImage4"
+
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/firebase_logo" />
+
+        <TextView
+            android:id="@+id/groupTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/groupImage4"
+            android:text="New group name sdsf"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/groupDescription4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupTitle4"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/groupImage4"
+            android:text="This is the description of the new group im creating"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/joinButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupDescription4"
+            android:layout_alignParentEnd="true"
+            android:text="Join"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/ic_like_black"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/Card5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/groupImage5"
+
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/firebase_logo" />
+
+        <TextView
+            android:id="@+id/groupTitle5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/groupImage5"
+            android:text="New group name sdsf"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/groupDescription5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupTitle5"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/groupImage5"
+            android:text="This is the description of the new group im creating"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/joinButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupDescription5"
+            android:layout_alignParentEnd="true"
+            android:text="Join"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/ic_like_black"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

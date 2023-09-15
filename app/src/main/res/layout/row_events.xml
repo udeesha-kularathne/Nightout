@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:contentPadding="3dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/profileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/uPictureIv"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/uNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User Name"
+                        android:textSize="18sp"
+                        android:layout_gravity="center_vertical" />
+                    <!-- Verified Icon -->
+                    <ImageView
+                        android:id="@+id/verificationBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_verified_user"
+                        android:visibility="gone"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/nameTv"
+                        app:layout_constraintTop_toTopOf="@+id/nameTv" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/pTimeTv"
+                    android:text="33 min"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/moreBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_more_icon"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:text="Title"
+            android:autoLink="all"/>
+        <TextView
+            android:id="@+id/pDescriptionTv"
+            android:text="The description of the post"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+        <ImageView
+            android:id="@+id/pImageIv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:background="@color/white"/>
+
+
+        <TextView
+            android:id="@+id/eDateTv"
+            android:text="date"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+
+
+        <TextView
+            android:id="@+id/eTimeTv"
+            android:text="date"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+
+
+        <TextView
+            android:id="@+id/eInOrOutTv"
+            android:text="indoor or outdoor"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+
+
+        <TextView
+            android:id="@+id/eDayOrNightTv"
+            android:text="day or night"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+
+        <TextView
+            android:id="@+id/eLocationTv"
+            android:text="location"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
+        <TextView
+            android:id="@+id/eIdTv"
+            android:text="location"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:autoLink="all"/>
+        <Button
+            android:id="@+id/reviewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_weight="0"
+            android:text="Review"
+            android:layout_gravity="end"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/interestBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:text="Interested"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            <Button
+                android:id="@+id/goingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_weight="0"
+                android:text="I'm Going"
+                style="?android:attr/borderlessButtonStyle"/>
+            <Button
+                android:id="@+id/participatedBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_weight="0"
+                android:text="Participated"
+                style="?android:attr/borderlessButtonStyle"/>
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/pLikesTv"-->
+<!--            android:text="1.2kLikes"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:paddingStart="25dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:gravity="center">-->
+<!--            <Button-->
+<!--                android:id="@+id/likeBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="LIKE"-->
+<!--                style="@style/Widget.MaterialComponents.Button.TextButton"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/commentBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="COMMENT"-->
+<!--                style="?android:attr/borderlessButtonStyle"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/shareBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="SHARE"-->
+<!--                style="?android:attr/borderlessButtonStyle"/>-->
+<!--        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="2dp"
+    android:background="@color/white"
+    tools:context=".OrgAddPostActivity">
+
+    <!-- Include the Toolbar widget -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <!-- ScrollView containing a single LinearLayout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+            <!-- EditText: Input post title -->
+            <EditText
+                android:id="@+id/pTitleEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Enter Event title"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <!-- ImageView: Input post image -->
+            <ImageView
+                android:id="@+id/pImageIv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#57B5B5B5"
+                android:minHeight="200dp"
+                android:src="@drawable/ic_add_photo_black" />
+
+            <!-- EditText: Input post description -->
+            <EditText
+                android:id="@+id/pDescriptionEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:hint="Enter Description"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minHeight="150dp"
+                android:padding="30dp" />
+
+            <!-- EditText: Input date -->
+            <EditText
+                android:id="@+id/pDateEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Enter Date"
+                android:padding="15dp"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <!-- EditText: Input time -->
+            <EditText
+                android:id="@+id/pTimeEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Enter Time"
+                android:padding="15dp"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <!-- EditText: Input location -->
+            <Spinner
+                android:id="@+id/locationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:entries="@array/location_array" />
+            <!-- Radio Group for choosing where to post -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pImageIv"
+                android:layout_marginTop="26dp"
+                android:orientation="vertical">
+
+                <!-- First Row: RadioGroup for choosing Day or Night -->
+                <RadioGroup
+                    android:id="@+id/radioDayOrNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Day time" />
+
+                    <RadioButton
+                        android:id="@+id/radioNight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="Night time"/>
+                </RadioGroup>
+
+                <!-- Second Row: RadioGroup for choosing Indoor or Outdoor -->
+                <RadioGroup
+                    android:id="@+id/radioInOrOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="3dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioIndoor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Indoor" />
+
+                    <RadioButton
+                        android:id="@+id/radioOutdoor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Outdoor"/>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/pUploadBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Upload" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

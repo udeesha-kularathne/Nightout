@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- CardView corner radius -->
+    <dimen name="card_view_corner_radius">8dp</dimen>
+
+    <!-- CardView content padding -->
+    <dimen name="card_view_content_padding">8dp</dimen>
+
+
+</resources>

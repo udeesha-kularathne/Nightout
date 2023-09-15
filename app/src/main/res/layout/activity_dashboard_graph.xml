@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnOrganizationDashboard1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Expenses and Revenue "
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnOrganizationDashboard2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnOrganizationDashboard1"
+        android:layout_marginLeft="119dp"
+        android:text="See Events History"
+        android:visibility="gone"
+        android:layout_marginTop="16dp" />
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/btnOrganizationDashboard2"/>
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/lineChart"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/monthProfitLineChart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/barChart"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/costVsProfitBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/monthProfitLineChart"/>
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/costVsIncomeBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/costVsProfitBarChart"/>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/mostProfitableMonthTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Most Profitable Month: "-->
+<!--            android:layout_below="@+id/costVsIncomeBarChart"-->
+<!--            android:layout_marginTop="16dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/mostProfitableMonthTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Highest Ticket Count in a Month: "-->
+<!--            android:layout_below="@+id/mostProfitableMonthTextView"-->
+<!--            android:layout_marginTop="16dp" />-->
+
+    </RelativeLayout>
+
+</ScrollView>

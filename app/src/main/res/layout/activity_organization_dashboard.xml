@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrganizationDashboardActivity">
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!-- activity_organization_dashboard.xml -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+        <!-- Add EditText fields for each input -->
+        <EditText
+            android:id="@+id/editTextMarketingCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Marketing Cost"/>
+        <EditText
+            android:id="@+id/editTextLaborCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Labor Cost"/>
+        <EditText
+            android:id="@+id/editTextUtilitiesCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Utilities Cost"/>
+        <EditText
+            android:id="@+id/editTextPersonnelCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Personnel Cost"/>
+        <EditText
+            android:id="@+id/editTextVenueCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Venue Cost"/>
+        <EditText
+            android:id="@+id/editTextMaterialCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Material Cost"/>
+        <EditText
+            android:id="@+id/editTextTicketCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Ticket Count"/>
+        <EditText
+            android:id="@+id/editTextTicketPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Ticket Price"/>
+
+        <EditText
+            android:id="@+id/editTextSalesIncome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Sales Income"/>
+
+        <EditText
+            android:id="@+id/editTextSponsorIncome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Sponsor Income"/>
+
+
+        <!-- Add more EditText fields for other inputs -->
+
+        <!-- Add Spinner for Category -->
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Add Spinner for Month -->
+        <Spinner
+            android:id="@+id/spinnerMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Add Button to submit data -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="250dp"
+            android:layout_marginTop="20dp"
+            android:text="Submit" />
+    </LinearLayout>
+</ScrollView>
+
+</RelativeLayout>

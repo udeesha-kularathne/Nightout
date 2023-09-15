@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">NightOut</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Home">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chat_list">Chat List</string>
+    <string-array name="categories_array">
+        <item>Select Category</item>
+        <item>Competitions</item>
+        <item>Food</item>
+        <item>Concerts</item>
+        <item>Exhibition</item>
+        <item>Festival</item>
+        <item>Sale</item>
+        <item>Shows</item>
+        <item>Sports</item>
+        <item>Travel</item>
+    </string-array>
+
+    <string-array name="months_array">
+        <item>Select The Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>july</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="location_array">
+        <item>Select The City</item>
+        <item>Ampara</item>
+        <item>Anuradhapura</item>
+        <item>Badulla</item>
+        <item>Colombo</item>
+        <item>Galle</item>
+        <item>Jaffna</item>
+        <item>Kandy</item>
+        <item>Kurunegala</item>
+        <item>Kegalla</item>
+        <item>Puttalam</item>
+        <item>Rathnapura</item>
+    </string-array>
+
+    <string-array name="Age_array">
+        <item>Select The Age Group</item>
+        <item>18–24</item>
+        <item>24–30</item>
+        <item>30–40</item>
+        <item>40–50</item>
+        <item>50></item>
+    </string-array>
+</resources>
