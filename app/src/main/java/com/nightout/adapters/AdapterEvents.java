@@ -2,19 +2,24 @@ package com.nightout.adapters;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,11 +27,17 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.nightout.AddPostActivity;
 import com.nightout.R;
 import com.nightout.ReviewAddPostActivity;
@@ -43,10 +54,13 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyHolder> 
     Context context;
     List<ModelEvent> eventList;
 
+    String myUid;
+
     DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Users");
     public AdapterEvents(Context context, List<ModelEvent> eventList) {
         this.context = context;
         this.eventList = eventList;
+        myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     @NonNull
@@ -139,7 +153,10 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyHolder> 
             //hide imageView
             myHolder.pImageIv.setVisibility(View.GONE);
 
-        } else {
+        }
+        else {
+            //show imageView
+            myHolder.pImageIv.setVisibility(View.VISIBLE);
             try {
                 Picasso.get().load(eImage).into(myHolder.pImageIv);
             } catch (Exception e) {
@@ -153,8 +170,7 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyHolder> 
         myHolder.moreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //will implement later
-                Toast.makeText(context, "More", Toast.LENGTH_SHORT).show();
+                showMoreOptions(myHolder.moreBtn, uid, myUid, eId, eImage);
             }
         });
 //        myHolder.likeBtn.setOnClickListener(new View.OnClickListener() {
@@ -245,6 +261,118 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyHolder> 
             }
         });
     }
+
+
+
+    private void showMoreOptions(ImageButton moreBtn, String uid, String myUid, String eId, String eImage) {
+        //creating popup menu currently having option Delete, we will add more options later
+        PopupMenu popupMenu = new PopupMenu(context, moreBtn, Gravity.END);
+
+        //show delete option in only post(s) of currently signed-in user
+        if (uid.equals(myUid)){
+            //add items in menu
+            popupMenu.getMenu().add(Menu.NONE, 0, 0, "Delete");
+        }
+        //item click listener
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                if (id ==0){
+                    //delete is clicked
+                    beginDelete(eId, eImage);
+                }
+                return false;
+
+            }
+        });
+        //show menu
+        popupMenu.show();
+    }
+
+    private void beginDelete(String eId, String eImage) {
+        //pody vsn br with or without image
+
+        if (eImage.equals("noImage")){
+            //post is without image
+            deleteWithoutImage(eId);
+        }
+        else {
+            //post is with image
+            deleteWithImage(eId, eImage);
+        }
+    }
+
+    private void deleteWithImage(String eId, String eImage) {
+        //progress bar
+        ProgressDialog pd =new ProgressDialog(context);
+        pd.setMessage("Deleting...");
+
+
+        StorageReference picRef = FirebaseStorage.getInstance().getReferenceFromUrl(eImage);
+        picRef.delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        //image deleted, now delete database
+
+                        Query fquery = FirebaseDatabase.getInstance().getReference("Events").orderByChild("eId").equalTo(eId);
+                        fquery.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                                    ds.getRef().removeValue(); // remove values from firebase where eid matches
+                                }
+                                //deleted
+                                Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                                pd.dismiss();
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //failed can't go further
+                        pd.dismiss();
+                        Toast.makeText(context, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+    }
+
+    private void deleteWithoutImage(String eId) {
+        ProgressDialog pd =new ProgressDialog(context);
+        pd.setMessage("Deleting...");
+
+        Query fquery = FirebaseDatabase.getInstance().getReference("Events").orderByChild("eId").equalTo(eId);
+        fquery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                    ds.getRef().removeValue(); // remove values from firebase where eid matches
+                }
+                //deleted
+                Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                pd.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+
 
     @Override
     public int getItemCount() {
